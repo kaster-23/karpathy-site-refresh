@@ -860,12 +860,13 @@ body {
   background: var(--color-bg-elevated);
 }
 
-/* Row: flex, fixed 88px height */
+/* Row: flex, auto height (min 88px) */
 .grid.is-list .card {
   display: flex !important;
   flex-direction: row;
   align-items: stretch;
-  height: 88px;
+  min-height: 88px;
+  height: auto;
   overflow: hidden;
   border-radius: 0;
   border: none;
@@ -887,11 +888,12 @@ body {
   border-left-color: var(--color-accent);
 }
 
-/* Thumbnail: 16:9 at 88px → 156px wide */
+/* Thumbnail: fixed-width column, auto height */
 .grid.is-list .card-img-wrap {
-  flex: 0 0 156px;
-  width: 156px;
-  height: 88px;
+  flex: 0 0 120px;
+  width: 120px;
+  height: auto;
+  min-height: 88px;
   aspect-ratio: unset !important; /* override 1:1 for project cards in list */
   border-radius: 0;
   overflow: hidden;
@@ -907,11 +909,11 @@ body {
 
 /* Placeholder card: same fixed column */
 .grid.is-list .card--placeholder .card-placeholder-inner {
-  flex: 0 0 156px;
-  width: 156px;
-  height: 88px;
+  flex: 0 0 120px;
+  width: 120px;
+  height: 100%;
+  min-height: 88px;
   aspect-ratio: unset !important;
-  min-height: unset;
   border-radius: 0;
 }
 
@@ -927,56 +929,43 @@ body {
   gap: 3px;
 }
 
-/* Text in list view — locked colors, single-line ellipsis */
+/* Text in list view */
 .grid.is-list .card .card-meta {
   font-size: 0.68rem !important;
   letter-spacing: 0.05em;
   color: var(--color-fg-subtle) !important;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .grid.is-list .card .card-title {
-  font-size: var(--text-sm) !important;
+  font-size: var(--text-base) !important;
   font-family: var(--font-serif);
   font-weight: var(--weight-semibold);
   line-height: 1.3;
   color: var(--color-fg) !important;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-/* Description: one line, no webkit needed */
+/* Description: wrap fully, no clamp */
 .grid.is-list .card .card-desc,
 .grid.is-list .card .card-caption {
   display: block !important;
-  font-size: var(--text-xs) !important;
+  font-size: var(--text-sm) !important;
   color: var(--color-fg-muted) !important;
-  line-height: 1.4;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-top: 0;
+  line-height: var(--leading-normal);
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  margin-top: var(--space-1);
 }
 
-/* Mobile: compact */
+/* Mobile: compact thumbnail, but still show description */
 @media (max-width: 640px) {
-  .grid.is-list .card {
-    height: 72px;
-  }
   .grid.is-list .card-img-wrap,
   .grid.is-list .card--placeholder .card-placeholder-inner {
-    flex: 0 0 128px;
-    width: 128px;
-    height: 72px;
+    flex: 0 0 90px;
+    width: 90px;
+    min-height: 72px;
   }
   .grid.is-list .card-body {
-    padding: var(--space-2) var(--space-3);
-  }
-  .grid.is-list .card .card-desc,
-  .grid.is-list .card .card-caption {
-    display: none !important; /* too cramped on very small screens */
+    padding: var(--space-3) var(--space-3);
   }
 }
