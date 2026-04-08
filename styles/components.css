@@ -831,12 +831,18 @@ body {
 
 
 /* ===========================
-   PROJECT CARDS: square aspect ratio
-   (original project images are all ~200×200 thumbnails)
+   PROJECT CARDS: square aspect ratio at multi-col, 16:9 on single-col mobile
+   (original project images are all ~200×200 square thumbnails)
    =========================== */
 
 #projects-grid .card-img-wrap {
   aspect-ratio: 1 / 1;
+}
+
+@media (max-width: 640px) {
+  #projects-grid .card-img-wrap {
+    aspect-ratio: 16 / 9;
+  }
 }
 
 /* ===========================
