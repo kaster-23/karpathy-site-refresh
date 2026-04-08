@@ -264,17 +264,46 @@
   overflow: hidden;
   aspect-ratio: 16 / 9;
   background: var(--color-border-light);
+  position: relative;
 }
 
 .card-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--duration-slow) var(--ease-default);
+  /* duotone: grayscale → sepia → rotate to slate-blue hue */
+  filter: grayscale(1) sepia(0.65) hue-rotate(158deg) saturate(1.15) brightness(0.88);
+  transition:
+    transform var(--duration-slow) var(--ease-default),
+    filter 0.45s ease;
+  display: block;
 }
 
+/* halftone dot overlay */
+.card-img-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(20, 48, 70, 0.32) 1px,
+    transparent 1px
+  );
+  background-size: 5px 5px;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+/* hover: reveal full color, dissolve halftone */
 .card:hover .card-image {
   transform: scale(1.04);
+  filter: grayscale(0) sepia(0) hue-rotate(0deg) saturate(1) brightness(1);
+}
+
+.card:hover .card-img-wrap::after {
+  opacity: 0;
 }
 
 .card-body {
@@ -745,18 +774,44 @@ body {
   border-radius: var(--radius-md);
   background: var(--color-border-light);
   margin-bottom: var(--space-2);
+  position: relative;
 }
 
 .yt-thumb {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--duration-slow) var(--ease-default);
+  filter: grayscale(1) sepia(0.65) hue-rotate(158deg) saturate(1.15) brightness(0.88);
+  transition:
+    transform var(--duration-slow) var(--ease-default),
+    filter 0.45s ease;
   display: block;
+}
+
+.yt-thumb-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(20, 48, 70, 0.32) 1px,
+    transparent 1px
+  );
+  background-size: 5px 5px;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+  mix-blend-mode: multiply;
+  z-index: 1;
+  border-radius: var(--radius-md);
 }
 
 .yt-card:hover .yt-thumb {
   transform: scale(1.04);
+  filter: grayscale(0) sepia(0) hue-rotate(0deg) saturate(1) brightness(1);
+}
+
+.yt-card:hover .yt-thumb-wrap::after {
+  opacity: 0;
 }
 
 .yt-title {
