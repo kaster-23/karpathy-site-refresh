@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andrej Karpathy</title>
+  <meta name="description" content="Personal page of Andrej Karpathy — founder of Eureka Labs, former Tesla and OpenAI, creator of CS231n.">
+  <meta name="author" content="Andrej Karpathy">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Andrej Karpathy">
+  <meta property="og:description" content="I like to train deep neural nets on large datasets.">
+  <meta property="og:image" content="assets/images/me_new.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="styles/utilities.css">
+</head>
+<body>
+
+  <!-- ==============================
+       HERO
+  ============================== -->
+  <header class="hero section--sm">
+    <div class="container">
+      <div class="hero-inner">
+        <img
+          class="hero-photo anim-hero-photo"
+          src="assets/images/me_new.jpg"
+          alt="Andrej Karpathy"
+          width="120"
+          height="120"
+        >
+        <h1 class="hero-name anim-hero-name">Andrej Karpathy</h1>
+        <p class="hero-tagline anim-hero-tagline">
+          I like to train deep neural nets on large datasets
+        </p>
+
+        <nav class="hero-social anim-hero-social" aria-label="Social links">
+          <!-- X / Twitter -->
+          <a href="https://twitter.com/karpathy" class="social-link link-plain" aria-label="X / Twitter" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" fill="currentColor"/>
+            </svg>
+          </a>
+
+          <!-- GitHub -->
+          <a href="https://github.com/karpathy" class="social-link link-plain" aria-label="GitHub" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill="currentColor"/>
+            </svg>
+          </a>
+
+          <!-- YouTube -->
+          <a href="https://www.youtube.com/@AndrejKarpathy" class="social-link link-plain" aria-label="YouTube" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="currentColor"/>
+            </svg>
+          </a>
+
+          <!-- Medium Blog -->
+          <a href="https://karpathy.medium.com" class="social-link link-plain" aria-label="Medium Blog" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" fill="currentColor"/>
+            </svg>
+          </a>
+
+          <!-- RSS -->
+          <a href="https://karpathy.bearblog.dev/feed/" class="social-link link-plain" aria-label="RSS Feed" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6.18 15.64a2.18 2.18 0 010 4.36 2.18 2.18 0 010-4.36M4 4.44A15.56 15.56 0 0119.56 20h-2.83A12.73 12.73 0 004 7.27V4.44m0 5.66a9.9 9.9 0 019.9 9.9h-2.83A7.07 7.07 0 004 12.93V10.1z" fill="currentColor"/>
+            </svg>
+          </a>
+
+          <!-- Email -->
+          <button class="social-link link-plain" id="iemail" aria-label="Email" title="Reveal email">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
+            </svg>
+          </button>
+        </nav>
+
+        <p class="hero-email-reveal" id="demail" aria-live="polite"></p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==============================
+         JOURNEY (TIMELINE)
+    ============================== -->
+    <section class="section" id="journey">
+      <div class="container">
+        <h2 class="section-heading anim-reveal">Journey</h2>
+
+        <div class="timeline">
+
+          <!-- 2024 – present: Eureka Labs -->
+          <article class="timeline-item anim-reveal">
+            <div class="timeline-header">
+              <span class="timeline-date">2024 — Present</span>
+              <img class="timeline-logo" src="assets/images/eureka.png" alt="Eureka Labs" loading="lazy">
+            </div>
+            <h3 class="timeline-role">Eureka Labs</h3>
+            <p>
+              Founder. Building <a href="https://eurekalabs.ai/" target="_blank" rel="noopener">Eureka Labs</a> to modernize education with AI — starting with AI+Human teachers that help students learn anything, from anywhere.
+            </p>
+          </article>
+
+          <!-- 2023–2024: YouTube / Independent -->
+          <article class="timeline-item anim-reveal">
+            <div class="timeline-header">
+              <span class="timeline-date">2023 — 2024</span>
+            </div>
+            <h3 class="timeline-role">Independent</h3>
+            <p>
+              After leaving OpenAI, focused on educational content. The <a href="https://www.youtube.com/@AndrejKarpathy" target="_blank" rel="noopener">Neural Networks: Zero to Hero</a> series on YouTube grew to become one of the most-watched deep learning courses — covering backprop, transformers, GPT, and tokenization from scratch.
+            </p>
+          </article>
+
+          <!-- 2017–2022: Tesla -->
+          <article class="timeline-item anim-reveal">
+            <div class="timeline-header">
+              <span class="timeline-date">2017 — 2022</span>
+              <img class="timeline-logo" src="assets/images/tesla_logo2.jpg" alt="Tesla" loading="lazy">
+            </div>
+            <h3 class="timeline-role">Tesla — Director of AI</h3>
+            <p>
+              Joined Tesla as the founding member and Director of AI for <a href="https://tesla.com/autopilot" target="_blank" rel="noopener">Autopilot</a>. Led the team building the vision-based FSD stack — dataset curation, neural network training, deployment at scale. Presented Tesla's AI approach at <a href="https://youtu.be/j0z4FweCy4M?t=2900" target="_blank" rel="noopener">Tesla AI Day 2021</a>.
+            </p>
+          </article>
+
+          <!-- 2015–2017: OpenAI -->
+          <article class="timeline-item anim-reveal">
+            <div class="timeline-header">
+              <span class="timeline-date">2015 — 2017</span>
+              <img class="timeline-logo" src="assets/images/openai_logo.png" alt="OpenAI" loading="lazy">
+            </div>
+            <h3 class="timeline-role">OpenAI — Research Scientist</h3>
+            <p>
+              Founding member of <a href="https://openai.com/" target="_blank" rel="noopener">OpenAI</a>. Worked on generative models, reinforcement learning, and contributed to early GPT research. Also returned briefly 2023–2024 to work on post-training and model evaluation.
+            </p>
+          </article>
+
+          <!-- 2011–2015: Stanford PhD -->
+          <article class="timeline-item anim-reveal">
+            <div class="timeline-header">
+              <span class="timeline-date">2011 — 2015</span>
+              <img class="timeline-logo" src="assets/images/stanford_logo.png" alt="Stanford University" loading="lazy">
+            </div>
+            <h3 class="timeline-role">Stanford University — PhD</h3>
+            <p>
+              PhD in Computer Science advised by <a href="https://vision.stanford.edu/" target="_blank" rel="noopener">Fei-Fei Li</a>. Thesis on visual-semantic alignment for images. Created <a href="https://cs231n.stanford.edu/" target="_blank" rel="noopener">CS231n: Convolutional Neural Networks for Visual Recognition</a> — Stanford's first deep learning course, which became the defining curriculum for an entire generation of practitioners. Lecture notes and <a href="https://youtube.com/playlist?list=PLkt2uSq6rBVctENoVBg1TpCC7OQi31AlC" target="_blank" rel="noopener">videos</a> remain widely used.
+            </p>
+          </article>
+
+          <!-- 2009–2011: UBC -->
+          <article class="timeline-item anim-reveal">
+            <div class="timeline-header">
+              <span class="timeline-date">2009 — 2011</span>
+              <img class="timeline-logo" src="assets/images/ubc_logo.png" alt="University of British Columbia" loading="lazy">
+            </div>
+            <h3 class="timeline-role">University of British Columbia — MSc</h3>
+            <p>
+              Master's in Computer Science. Research in computer vision and machine learning.
+            </p>
+          </article>
+
+          <!-- 2005–2009: UofT -->
+          <article class="timeline-item anim-reveal">
+            <div class="timeline-header">
+              <span class="timeline-date">2005 — 2009</span>
+              <img class="timeline-logo" src="assets/images/uoft_logo.png" alt="University of Toronto" loading="lazy">
+            </div>
+            <h3 class="timeline-role">University of Toronto — BSc</h3>
+            <p>
+              Bachelor's in Computer Science and Physics.
+            </p>
+          </article>
+
+        </div><!-- /timeline -->
+      </div>
+    </section>
+
+    <!-- ==============================
+         TEACHING
+    ============================== -->
+    <section class="section" id="teaching">
+      <div class="container">
+        <h2 class="section-heading anim-reveal">Teaching</h2>
+
+        <div class="stack stack--6">
+
+          <div class="teach-item anim-reveal">
+            <div class="teach-meta label">YouTube · 2022 – Present</div>
+            <h3 class="teach-title">
+              <a href="https://www.youtube.com/@AndrejKarpathy" target="_blank" rel="noopener">Neural Networks: Zero to Hero</a>
+            </h3>
+            <p>A full from-scratch video series building deep learning from the ground up — from micrograd through GPT-2. No shortcuts. Watch backprop derive itself, build a transformer, understand tokenization.</p>
+            <div class="teach-links flex gap-3">
+              <a href="https://www.youtube.com/@AndrejKarpathy" target="_blank" rel="noopener" class="tag">YouTube Channel →</a>
+              <a href="https://github.com/karpathy/nn-zero-to-hero" target="_blank" rel="noopener" class="tag">Course Repo</a>
+            </div>
+          </div>
+
+          <div class="teach-item anim-reveal">
+            <div class="teach-meta label">Stanford · 2015 – 2017</div>
+            <h3 class="teach-title">
+              <a href="https://cs231n.stanford.edu/" target="_blank" rel="noopener">CS231n: Convolutional Neural Networks for Visual Recognition</a>
+            </h3>
+            <p>Stanford's first deep learning course, co-taught with Fei-Fei Li and Justin Johnson. Course notes and lecture videos remain among the most-referenced deep learning materials online.</p>
+            <div class="teach-links flex gap-3">
+              <a href="https://cs231n.github.io/" target="_blank" rel="noopener" class="tag">Course Notes →</a>
+              <a href="https://youtube.com/playlist?list=PLkt2uSq6rBVctENoVBg1TpCC7OQi31AlC" target="_blank" rel="noopener" class="tag">Lectures (2016)</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         FEATURED TALKS
+    ============================== -->
+    <section class="section" id="talks">
+      <div class="container container--wide">
+        <h2 class="section-heading anim-reveal">Talks</h2>
+
+        <div class="grid grid--3 talks-grid">
+
+          <a href="https://www.youtube.com/watch?v=lXUZvyajciY&t=7028s" class="card anim-card" target="_blank" rel="noopener">
+            <div class="card-img-wrap">
+              <img class="card-image" src="assets/images/dwarkesh_pod.jpg" alt="Dwarkesh Podcast 2025" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-meta label">2025</span>
+              <h3 class="card-title">Dwarkesh Podcast</h3>
+            </div>
+          </a>
+
+          <a href="https://youtu.be/WwDWjFMKDeQ" class="card anim-card" target="_blank" rel="noopener">
+            <div class="card-img-wrap">
+              <img class="card-image" src="assets/images/ycaistartup2025.jpg" alt="YC AI Startup School 2025" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-meta label">2025</span>
+              <h3 class="card-title">YC AI Startup School</h3>
+            </div>
+          </a>
+
+          <a href="https://youtu.be/EWvNQjAaOHw" class="card anim-card" target="_blank" rel="noopener">
+            <div class="card-img-wrap">
+              <img class="card-image" src="assets/images/gpumode2025.jpg" alt="GPU Mode 2025" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-meta label">2025</span>
+              <h3 class="card-title">GPU Mode</h3>
+            </div>
+          </a>
+
+          <a href="https://youtu.be/hM_h0UA7upI" class="card anim-card" target="_blank" rel="noopener">
+            <div class="card-img-wrap">
+              <img class="card-image" src="assets/images/gpumode_talk_2024.jpg" alt="GPU Mode 2024" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-meta label">2024</span>
+              <h3 class="card-title">GPU Mode</h3>
+            </div>
+          </a>
+
+          <a href="https://youtu.be/SSRn8vzTI5Y" class="card anim-card" target="_blank" rel="noopener">
+            <div class="card-img-wrap">
+              <img class="card-image" src="assets/images/nopriors.jpg" alt="No Priors 2024" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-meta label">2024</span>
+              <h3 class="card-title">No Priors Podcast</h3>
+            </div>
+          </a>
+
+          <a href="https://youtu.be/yCC7E2k-x2A" class="card anim-card" target="_blank" rel="noopener">
+            <div class="card-img-wrap">
+              <img class="card-image" src="assets/images/berkeley2024.jpg" alt="UC Berkeley AI Hackathon 2024" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-meta label">2024</span>
+              <h3 class="card-title">UC Berkeley AI Hackathon</h3>
+            </div>
+          </a>
+
+          <a href="https://youtu.be/bZQun8Y4L2A" class="card anim-card" target="_blank" rel="noopener">
+            <div class="card-img-wrap">
+              <img class="card-image" src="assets/images/stateofgpt.jpeg" alt="State of GPT — Microsoft Build 2023" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-meta label">2023 · Microsoft Build</span>
+              <h3 class="card-title">State of GPT</h3>
+            </div>
+          </a>
+
+          <a href="https://youtu.be/cdiD-9MMpb0" class="card anim-card" target="_blank" rel="noopener">
+            <div class="card-img-wrap">
+              <img class="card-image" src="assets/images/lex333.jpg" alt="Lex Fridman Podcast 2022" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-meta label">2022 · Lex Fridman</span>
+              <h3 class="card-title">Lex Fridman Podcast #333</h3>
+            </div>
+          </a>
+
+          <a href="https://youtu.be/j0z4FweCy4M?t=2900" class="card anim-card" target="_blank" rel="noopener">
+            <div class="card-img-wrap">
+              <img class="card-image" src="assets/images/aiday.jpg" alt="Tesla AI Day 2021" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-meta label">2021 · Tesla</span>
+              <h3 class="card-title">Tesla AI Day</h3>
+            </div>
+          </a>
+
+          <a href="https://youtu.be/_L3gNaAVjNc" class="card anim-card" target="_blank" rel="noopener">
+            <div class="card-img-wrap">
+              <img class="card-image" src="assets/images/robotbrains.jpg" alt="Robot Brains Podcast 2021" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-meta label">2021</span>
+              <h3 class="card-title">Robot Brains Podcast</h3>
+            </div>
+          </a>
+
+          <a href="https://youtu.be/I2ZK3ngNvvI" class="card anim-card" target="_blank" rel="noopener">
+            <div class="card-img-wrap">
+              <img class="card-image" src="assets/images/pytorch_dev_day.jpg" alt="PyTorch Dev Day 2019" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-meta label">2019 · PyTorch Dev Day</span>
+              <h3 class="card-title">PyTorch: A modern library for ML</h3>
+            </div>
+          </a>
+
+          <a href="https://youtu.be/u6aEYuemt0M" class="card anim-card" target="_blank" rel="noopener">
+            <div class="card-img-wrap">
+              <img class="card-image" src="assets/images/eccv2014.jpg" alt="ECCV 2014 Tutorial" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-meta label">2014 · ECCV</span>
+              <h3 class="card-title">Deep Learning Tutorial</h3>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         WRITING
+    ============================== -->
+    <section class="section" id="writing">
+      <div class="container">
+        <h2 class="section-heading anim-reveal">Writing</h2>
+
+        <ol class="writing-list" reversed>
+
+          <li class="writing-item anim-reveal">
+            <span class="writing-date mono">2023</span>
+            <div>
+              <a href="https://karpathy.bearblog.dev/blog/" target="_blank" rel="noopener">Bear Blog</a>
+              <span class="writing-platform label">· Newer posts</span>
+            </div>
+          </li>
+
+          <li class="writing-item anim-reveal">
+            <span class="writing-date mono">2022</span>
+            <div>
+              <a href="https://karpathy.medium.com/software-2-0-a64152b37c35" target="_blank" rel="noopener">Musings on building a software 2.0 stack at Tesla</a>
+            </div>
+          </li>
+
+          <li class="writing-item anim-reveal">
+            <span class="writing-date mono">2021</span>
+            <div>
+              <a href="https://karpathy.github.io/2021/06/21/blockchain/" target="_blank" rel="noopener">A from-scratch tour of Bitcoin in Python</a>
+            </div>
+          </li>
+
+          <li class="writing-item anim-reveal">
+            <span class="writing-date mono">2019</span>
+            <div>
+              <a href="https://karpathy.medium.com/yes-you-should-understand-backprop-e2f06eab496b" target="_blank" rel="noopener">Yes you should understand backprop</a>
+            </div>
+          </li>
+
+          <li class="writing-item anim-reveal">
+            <span class="writing-date mono">2017</span>
+            <div>
+              <a href="https://karpathy.medium.com/software-2-0-a64152b37c35" target="_blank" rel="noopener">Software 2.0</a>
+            </div>
+          </li>
+
+          <li class="writing-item anim-reveal">
+            <span class="writing-date mono">2016</span>
+            <div>
+              <a href="https://karpathy.github.io/2016/09/07/phd/" target="_blank" rel="noopener">A Survival Guide to a PhD</a>
+            </div>
+          </li>
+
+          <li class="writing-item anim-reveal">
+            <span class="writing-date mono">2016</span>
+            <div>
+              <a href="https://karpathy.github.io/2019/04/25/recipe/" target="_blank" rel="noopener">A Recipe for Training Neural Networks</a>
+            </div>
+          </li>
+
+          <li class="writing-item anim-reveal">
+            <span class="writing-date mono">2015</span>
+            <div>
+              <a href="https://karpathy.github.io/2015/05/21/rnn-effectiveness/" target="_blank" rel="noopener">The Unreasonable Effectiveness of Recurrent Neural Networks</a>
+            </div>
+          </li>
+
+          <li class="writing-item anim-reveal">
+            <span class="writing-date mono">2014</span>
+            <div>
+              <a href="https://karpathy.github.io/2014/07/03/feature-extraction-hacks-stl10/" target="_blank" rel="noopener">Feature extraction: Tampering with networks for fun and profit</a>
+            </div>
+          </li>
+
+        </ol>
+
+        <div class="writing-more anim-reveal">
+          <a href="https://karpathy.github.io" class="tag" target="_blank" rel="noopener">GitHub Blog →</a>
+          <a href="https://karpathy.medium.com" class="tag" target="_blank" rel="noopener">Medium</a>
+          <a href="https://karpathy.bearblog.dev/blog/" class="tag" target="_blank" rel="noopener">Bear Blog</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         PROJECTS
+    ============================== -->
+    <section class="section" id="projects">
+      <div class="container container--wide">
+        <h2 class="section-heading anim-reveal">Projects</h2>
+
+        <div class="grid grid--2">
+
+          <a href="https://github.com/karpathy/micrograd" class="card anim-card" target="_blank" rel="noopener">
+            <div class="card-img-wrap">
+              <img class="card-image" src="assets/images/puppy.jpg" alt="micrograd" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-meta label">Python · 2020</span>
+              <h3 class="card-title">micrograd</h3>
+              <p class="card-desc">A tiny scalar-valued autograd engine and a neural net library on top of it. ~100 lines, no dependencies. The pedagogical core of Zero to Hero.</p>
+            </div>
+          </a>
+
+          <a href="https://github.com/karpathy/char-rnn" class="card anim-card" target="_blank" rel="noopener">
+            <div class="card-img-wrap">
+              <img class="card-image" src="assets/images/charseq.jpeg" alt="char-rnn" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-meta label">Lua/Torch · 2015</span>
+              <h3 class="card-title">char-rnn</h3>
+              <p class="card-desc">Multi-layer RNN/LSTM for character-level language modeling. Accompanied the "Unreasonable Effectiveness of RNNs" post — generated Shakespeare, Linux kernel, and LaTeX papers.</p>
+            </div>
+          </a>
+
+          <a href="https://arxiv-sanity-lite.com" class="card anim-card" target="_blank" rel="noopener">
+            <div class="card-img-wrap">
+              <img class="card-image" src="assets/images/arxiv_sanity.jpg" alt="arxiv sanity" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-meta label">Python/Flask · 2016</span>
+              <h3 class="card-title">arxiv-sanity</h3>
+              <p class="card-desc">A web interface for browsing, searching, and filtering arXiv papers. Built to cut through the noise for ML researchers. Now at arxiv-sanity-lite.com.</p>
+            </div>
+          </a>
+
+          <a href="https://cs.stanford.edu/people/karpathy/densecap/" class="card anim-card" target="_blank" rel="noopener">
+            <div class="card-img-wrap">
+              <img class="card-image" src="assets/images/captioning.jpg" alt="DenseCap" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-meta label">Torch · 2015</span>
+              <h3 class="card-title">DenseCap</h3>
+              <p class="card-desc">Fully convolutional localization network for dense captioning — simultaneously detects and describes regions in images.</p>
+            </div>
+          </a>
+
+          <a href="https://github.com/karpathy/neuraltalk2" class="card anim-card" target="_blank" rel="noopener">
+            <div class="card-img-wrap">
+              <img class="card-image" src="assets/images/imagenet.jpg" alt="NeuralTalk2" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-meta label">Torch · 2015</span>
+              <h3 class="card-title">NeuralTalk2</h3>
+              <p class="card-desc">Efficient image captioning with deep visual-semantic alignments. Rewrote in Torch for GPU speed; widely used as a base for vision-language research.</p>
+            </div>
+          </a>
+
+          <a href="https://cs.stanford.edu/people/karpathy/convnetjs/" class="card anim-card" target="_blank" rel="noopener">
+            <div class="card-img-wrap">
+              <img class="card-image" src="assets/images/convnetlogo3.png" alt="ConvNetJS" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-meta label">JavaScript · 2014</span>
+              <h3 class="card-title">ConvNetJS</h3>
+              <p class="card-desc">Deep learning in the browser. Train convolutional nets on MNIST, CIFAR-10, and more — entirely client-side. One of the first in-browser DL demos.</p>
+            </div>
+          </a>
+
+          <a href="https://github.com/karpathy/ulogme" class="card anim-card" target="_blank" rel="noopener">
+            <div class="card-img-wrap">
+              <img class="card-image" src="assets/images/ulogme-small.jpg" alt="ulogme" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-meta label">Python · 2014</span>
+              <h3 class="card-title">ulogme</h3>
+              <p class="card-desc">Re-purpose Ubuntu/Mac system logs to monitor and visualize your productivity, habits, and attention. Self-quantification for developers.</p>
+            </div>
+          </a>
+
+          <!-- Placeholder card for nanogpt -->
+          <a href="https://github.com/karpathy/nanoGPT" class="card card--placeholder anim-card" target="_blank" rel="noopener">
+            <div class="card-placeholder-inner">
+              <span class="card-placeholder-name">nanoGPT</span>
+            </div>
+            <div class="card-body">
+              <span class="card-meta label">Python · 2022</span>
+              <h3 class="card-title">nanoGPT</h3>
+              <p class="card-desc">The simplest, fastest repository for training/finetuning medium-sized GPTs. ~300 lines. Trains GPT-2 on a single A100 in ~4 hours.</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         PUBLICATIONS
+    ============================== -->
+    <section class="section" id="publications">
+      <div class="container">
+        <h2 class="section-heading anim-reveal">Publications</h2>
+
+        <p class="pub-note anim-reveal">
+          Selected. Full list on <a href="https://scholar.google.com/citations?user=l8WuQJgAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.
+        </p>
+
+        <ol class="pub-list" reversed>
+
+          <li class="pub-item anim-reveal">
+            <span class="pub-year mono">2024</span>
+            <div class="pub-content">
+              <a href="https://arxiv.org/abs/2401.01335" class="pub-title" target="_blank" rel="noopener">
+                Scaling and evaluating sparse autoencoders
+              </a>
+              <span class="pub-venue">OpenAI</span>
+            </div>
+          </li>
+
+          <li class="pub-item anim-reveal">
+            <span class="pub-year mono">2022</span>
+            <div class="pub-content">
+              <a href="https://arxiv.org/abs/2205.01068" class="pub-title" target="_blank" rel="noopener">
+                Situated Language Understanding at Scale
+              </a>
+              <span class="pub-venue">Workshop</span>
+            </div>
+          </li>
+
+          <li class="pub-item anim-reveal">
+            <span class="pub-year mono">2016</span>
+            <div class="pub-content">
+              <a href="https://cs.stanford.edu/people/karpathy/densecap/" class="pub-title" target="_blank" rel="noopener">
+                DenseCap: Fully Convolutional Localization Networks for Dense Captioning
+              </a>
+              <span class="pub-venue">CVPR 2016</span>
+            </div>
+          </li>
+
+          <li class="pub-item anim-reveal">
+            <span class="pub-year mono">2015</span>
+            <div class="pub-content">
+              <a href="https://arxiv.org/abs/1506.01497" class="pub-title" target="_blank" rel="noopener">
+                Deep Visual-Semantic Alignments for Image Description
+              </a>
+              <span class="pub-venue">CVPR 2015</span>
+            </div>
+          </li>
+
+          <li class="pub-item anim-reveal">
+            <span class="pub-year mono">2015</span>
+            <div class="pub-content">
+              <a href="https://arxiv.org/abs/1506.02640" class="pub-title" target="_blank" rel="noopener">
+                Visualizing and Understanding Recurrent Networks
+              </a>
+              <span class="pub-venue">ICLR 2016 Workshop</span>
+            </div>
+          </li>
+
+          <li class="pub-item anim-reveal">
+            <span class="pub-year mono">2014</span>
+            <div class="pub-content">
+              <a href="https://arxiv.org/abs/1412.7755" class="pub-title" target="_blank" rel="noopener">
+                Deep Fragment Embeddings for Bidirectional Image-Sentence Alignment
+              </a>
+              <span class="pub-venue">NIPS 2014</span>
+            </div>
+          </li>
+
+          <li class="pub-item anim-reveal">
+            <span class="pub-year mono">2014</span>
+            <div class="pub-content">
+              <a href="https://arxiv.org/abs/1311.2901" class="pub-title" target="_blank" rel="noopener">
+                Large-Scale Video Classification with CNNs
+              </a>
+              <span class="pub-venue">CVPR 2014</span>
+            </div>
+          </li>
+
+          <li class="pub-item anim-reveal">
+            <span class="pub-year mono">2014</span>
+            <div class="pub-content">
+              <a href="https://cs.stanford.edu/people/karpathy/main.pdf" class="pub-title" target="_blank" rel="noopener">
+                Connecting Images and Natural Language (PhD Thesis)
+              </a>
+              <span class="pub-venue">Stanford University</span>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ==============================
+         MISCELLANEOUS
+    ============================== -->
+    <section class="section" id="misc">
+      <div class="container">
+        <h2 class="section-heading anim-reveal">Miscellaneous</h2>
+
+        <div class="stack stack--4 anim-reveal">
+          <p>
+            A curated list of <a href="/books.html">sci-fi books</a> I've enjoyed.
+            Undergraduate academic <a href="https://cs.stanford.edu/people/karpathy/advice.html" target="_blank" rel="noopener">advice</a>.
+          </p>
+          <p>
+            I was briefly into speedcubing — some old <a href="https://www.youtube.com/user/badmephisto/featured" target="_blank" rel="noopener">Rubik's cube tutorials</a>.
+            Also a Tumblr on <a href="https://lossfunctions.tumblr.com" target="_blank" rel="noopener">loss functions</a>.
+          </p>
+          <p>
+            Contact: click the envelope icon above to reveal email. Fair warning — inbox is overwhelmed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================
+       FOOTER
+  ============================== -->
+  <footer class="footer section--sm">
+    <div class="container">
+      <p class="footer-text">
+        Andrej Karpathy &mdash;
+        <span class="mono">0 frameworks</span>.
+        HTML, CSS &amp; a sprinkle of <a href="https://gsap.com" target="_blank" rel="noopener">GSAP</a>.
+      </p>
+    </div>
+  </footer>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="scripts/main.js"></script>
+
+</body>
+</html>

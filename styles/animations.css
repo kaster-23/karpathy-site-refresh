@@ -1,0 +1,89 @@
+/* ===========================
+   ANIMATIONS — GSAP INITIAL STATES
+   =========================== */
+
+/*
+  Elements start invisible/offset.
+  GSAP (main.js) animates them into their final state.
+  CSS only handles initial states here — no CSS animations.
+*/
+
+/* Generic reveal: fade + slide up */
+.anim-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  will-change: opacity, transform;
+}
+
+/* Card reveal: fade + tiny slide + subtle scale */
+.anim-card {
+  opacity: 0;
+  transform: translateY(16px);
+  will-change: opacity, transform;
+}
+
+/* Hero-specific initial states */
+.anim-hero-photo {
+  opacity: 0;
+  transform: scale(0.94);
+  will-change: opacity, transform;
+}
+
+.anim-hero-name {
+  opacity: 0;
+  transform: translateY(18px);
+  will-change: opacity, transform;
+}
+
+.anim-hero-tagline {
+  opacity: 0;
+  transform: translateY(14px);
+  will-change: opacity, transform;
+}
+
+.anim-hero-social {
+  opacity: 0;
+  transform: translateY(10px);
+  will-change: opacity, transform;
+}
+
+
+/* ===========================
+   REDUCED MOTION OVERRIDE
+   All elements immediately visible — no animation
+   =========================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-reveal,
+  .anim-card,
+  .anim-hero-photo,
+  .anim-hero-name,
+  .anim-hero-tagline,
+  .anim-hero-social {
+    opacity: 1 !important;
+    transform: none !important;
+    will-change: auto !important;
+    transition: none !important;
+  }
+
+  .section-heading::after {
+    width: 100% !important;
+    transition: none !important;
+  }
+
+  .card {
+    transition: none !important;
+  }
+
+  .card-image {
+    transition: none !important;
+  }
+
+  .social-link {
+    transition: color var(--duration-normal) var(--ease-default) !important;
+  }
+
+  .timeline-logo {
+    transition: none !important;
+  }
+}
