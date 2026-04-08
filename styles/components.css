@@ -531,6 +531,152 @@
   margin-top: var(--space-2);
 }
 
+/* Talk card caption */
+.card-caption {
+  font-size: var(--text-xs);
+  color: var(--color-fg-subtle);
+  line-height: var(--leading-normal);
+  margin-top: var(--space-1);
+}
+
+/* --- TEACHING GRID --- */
+.teach-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+.teach-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-bg-elevated);
+  transition:
+    transform var(--duration-normal) var(--ease-default),
+    box-shadow var(--duration-normal) var(--ease-default),
+    border-color var(--duration-normal) var(--ease-default);
+}
+
+.teach-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px var(--color-shadow-md);
+  border-color: var(--color-border);
+}
+
+.teach-card-img {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--duration-slow) var(--ease-default);
+}
+
+.teach-card:hover .teach-card-img {
+  transform: scale(1.04);
+}
+
+.teach-card-body {
+  padding: var(--space-4) var(--space-5) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.teach-card-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--color-fg);
+  line-height: var(--leading-snug);
+}
+
+.teach-card-body p {
+  font-size: var(--text-sm);
+  color: var(--color-fg-muted);
+  line-height: var(--leading-normal);
+}
+
+@media (max-width: 640px) {
+  .teach-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- BOTTOM NAV (Notch) --- */
+.bottom-nav {
+  position: fixed;
+  bottom: var(--space-5);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.bottom-nav-pill {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  background: color-mix(in srgb, var(--color-fg) 88%, transparent);
+  backdrop-filter: blur(16px) saturate(1.6);
+  -webkit-backdrop-filter: blur(16px) saturate(1.6);
+  border-radius: var(--radius-full);
+  padding: var(--space-2) var(--space-3);
+  pointer-events: all;
+  box-shadow:
+    0 4px 24px rgba(0,0,0,0.18),
+    0 1px 0 rgba(255,255,255,0.06) inset;
+}
+
+.bnav-link {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-full);
+  transition:
+    color var(--duration-fast) var(--ease-default),
+    background var(--duration-fast) var(--ease-default);
+  white-space: nowrap;
+}
+
+.bnav-link:hover {
+  color: rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.1);
+}
+
+.bnav-link.active {
+  color: #ffffff;
+  background: rgba(255,255,255,0.15);
+}
+
+/* Add body padding so footer isn't hidden behind nav */
+body {
+  padding-bottom: 5rem;
+}
+
+@media (max-width: 480px) {
+  .bottom-nav {
+    bottom: var(--space-4);
+    width: calc(100% - 2rem);
+  }
+  .bottom-nav-pill {
+    width: 100%;
+    justify-content: space-around;
+    gap: 0;
+    padding: var(--space-2) var(--space-2);
+  }
+  .bnav-link {
+    padding: var(--space-2) var(--space-2);
+    font-size: 0.68rem;
+  }
+}
+
 
 /* --- Responsive adjustments --- */
 @media (max-width: 640px) {

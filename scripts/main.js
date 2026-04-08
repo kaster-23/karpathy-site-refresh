@@ -16,6 +16,26 @@
     gsap.registerPlugin(ScrollTrigger);
   }
 
+  // ─── Bottom nav active state ─────────────────────────────────────────────
+  const navLinks = document.querySelectorAll('.bnav-link');
+  const sections = document.querySelectorAll('main section[id]');
+
+  if (navLinks.length && sections.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            navLinks.forEach((l) => l.classList.remove('active'));
+            const active = document.querySelector(`.bnav-link[data-section="${entry.target.id}"]`);
+            if (active) active.classList.add('active');
+          }
+        });
+      },
+      { rootMargin: '-40% 0px -55% 0px' }
+    );
+    sections.forEach((s) => observer.observe(s));
+  }
+
   // ─── Email reveal (ROT13) ────────────────────────────────────────────────
   const rot13 = (str) => {
     const alpha =
