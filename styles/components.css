@@ -892,17 +892,40 @@ body {
 
 
 /* ===========================
-   PROJECTS LIST — always list view, square thumbs, clamped text
+   PROJECTS LIST — image sets height, text never overflows
    =========================== */
 
-/* Fixed 96×96 square thumbnail column */
+/* Card height locked to image size — image drives, text clips */
+.projects-list.is-list .card,
+.projects-list .card {
+  height: 96px !important;
+  min-height: unset !important;
+  overflow: hidden !important;
+}
+
+/* Fixed 96×96 square thumbnail — fills full card height */
 .projects-list .card-img-wrap,
 .projects-list .card--placeholder .card-placeholder-inner {
   flex: 0 0 96px !important;
   width: 96px !important;
   height: 96px !important;
   min-height: unset !important;
-  aspect-ratio: 1 / 1 !important;
+  aspect-ratio: unset !important;
+  align-self: stretch !important;
+}
+
+/* Text column: clip at card boundary, no overflow */
+.projects-list .card-body {
+  overflow: hidden !important;
+  padding: 10px 14px !important;
+  gap: 2px !important;
+}
+
+/* Meta: single line */
+.projects-list .card .card-meta {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
 
 /* Title: single line with ellipsis */
@@ -913,7 +936,7 @@ body {
   font-size: var(--text-sm) !important;
 }
 
-/* Description: exactly 2 lines then ellipsis */
+/* Description: 2 lines max, then ellipsis */
 .projects-list .card .card-desc {
   display: -webkit-box !important;
   -webkit-line-clamp: 2 !important;
@@ -921,8 +944,8 @@ body {
   overflow: hidden !important;
   white-space: normal !important;
   font-size: var(--text-xs) !important;
-  line-height: 1.55 !important;
-  margin-top: 2px !important;
+  line-height: 1.45 !important;
+  margin-top: 1px !important;
 }
 
 
