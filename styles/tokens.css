@@ -9,11 +9,11 @@
   --color-fg:           #1a1a1b;
   --color-fg-muted:     #6b6b6b;
   --color-fg-subtle:    #9a9a9a;
-  --color-accent:       #3d6b8e;   /* slate-blue — calm, intellectual, distinct */
-  --color-accent-hover: #2d5472;
+  --color-accent:       #b87333;   /* amber-bronze — warm, grounded, distinct */
+  --color-accent-hover: #9e5f22;
   --color-border:       #e4e2d8;
   --color-border-light: #edeae0;
-  --color-selection:    rgba(61, 107, 142, 0.18);
+  --color-selection:    rgba(184, 115, 51, 0.18);
   --color-shadow-sm:    rgba(26, 26, 27, 0.04);
   --color-shadow-md:    rgba(26, 26, 27, 0.08);
   --color-shadow-lg:    rgba(26, 26, 27, 0.14);
