@@ -249,14 +249,12 @@
   /* Prevent link hover color from cascading into card text */
   color: var(--color-fg);
   transition:
-    transform var(--duration-normal) var(--ease-default),
     box-shadow var(--duration-normal) var(--ease-default),
     border-color var(--duration-normal) var(--ease-default);
 }
 
 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 28px var(--color-shadow-md);
+  box-shadow: 0 4px 16px var(--color-shadow-md);
   border-color: var(--color-border);
 }
 
@@ -609,8 +607,7 @@
 }
 
 .teach-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 28px var(--color-shadow-md);
+  box-shadow: 0 4px 16px var(--color-shadow-md);
   border-color: var(--color-border);
 }
 
