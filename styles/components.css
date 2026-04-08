@@ -891,12 +891,37 @@ body {
 
 
 /* ===========================
-   PROJECT CARDS: square aspect ratio at multi-col, 16:9 on single-col mobile
-   (original project images are all ~200×200 square thumbnails)
+   PROJECTS LIST — always list view, square thumbs, clamped text
    =========================== */
 
-#projects-grid .card-img-wrap {
-  aspect-ratio: 1 / 1;
+/* Fixed 96×96 square thumbnail column */
+.projects-list .card-img-wrap,
+.projects-list .card--placeholder .card-placeholder-inner {
+  flex: 0 0 96px !important;
+  width: 96px !important;
+  height: 96px !important;
+  min-height: unset !important;
+  aspect-ratio: 1 / 1 !important;
+}
+
+/* Title: single line with ellipsis */
+.projects-list .card .card-title {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  font-size: var(--text-sm) !important;
+}
+
+/* Description: exactly 2 lines then ellipsis */
+.projects-list .card .card-desc {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  white-space: normal !important;
+  font-size: var(--text-xs) !important;
+  line-height: 1.55 !important;
+  margin-top: 2px !important;
 }
 
 
