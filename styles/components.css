@@ -623,56 +623,59 @@
   }
 }
 
-/* --- BOTTOM NAV (Notch) — true glass --- */
+/* --- BOTTOM NAV (Notch) --- */
 .bottom-nav {
   position: fixed;
-  bottom: var(--space-5);
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 100;
+  z-index: 1001; /* above grain overlay */
   pointer-events: none;
 }
 
 .bottom-nav-pill {
   display: flex;
   align-items: center;
-  gap: var(--space-1);
-  background: rgba(16, 14, 10, 0.58);
-  backdrop-filter: blur(24px) saturate(2) brightness(0.9);
-  -webkit-backdrop-filter: blur(24px) saturate(2) brightness(0.9);
-  border-radius: var(--radius-full);
-  padding: var(--space-2) var(--space-3);
+  gap: 2px;
+  background: rgba(22, 20, 16, 0.72);
+  backdrop-filter: blur(28px) saturate(1.8);
+  -webkit-backdrop-filter: blur(28px) saturate(1.8);
+  border-radius: 999px;
+  padding: 4px 6px;
   pointer-events: all;
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.25),
-    0 1px 0 rgba(255, 255, 255, 0.09) inset,
-    0 -1px 0 rgba(0, 0, 0, 0.12) inset;
+    0 4px 6px -1px rgba(0, 0, 0, 0.15),
+    0 12px 40px rgba(0, 0, 0, 0.28),
+    0 1px 0 rgba(255, 255, 255, 0.07) inset;
 }
 
 .bnav-link {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: var(--weight-medium);
-  letter-spacing: 0.02em;
-  color: rgba(255,255,255,0.55);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.45);
   text-decoration: none;
-  padding: var(--space-2) var(--space-3);
-  border-radius: var(--radius-full);
+  padding: 6px 11px;
+  border-radius: 999px;
   transition:
-    color var(--duration-fast) var(--ease-default),
-    background var(--duration-fast) var(--ease-default);
+    color 120ms ease,
+    background 120ms ease;
   white-space: nowrap;
+  line-height: 1;
 }
 
 .bnav-link:hover {
-  color: rgba(255,255,255,0.95);
-  background: rgba(255,255,255,0.1);
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.08);
+  text-decoration: none;
 }
 
 .bnav-link.active {
   color: #ffffff;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.13);
+  text-decoration: none;
 }
 
 /* Add body padding so footer isn't hidden behind nav */
@@ -680,20 +683,22 @@ body {
   padding-bottom: 5rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 540px) {
   .bottom-nav {
-    bottom: var(--space-4);
-    width: calc(100% - 2rem);
+    bottom: 14px;
+    width: calc(100vw - 24px);
+    max-width: 420px;
   }
   .bottom-nav-pill {
     width: 100%;
-    justify-content: space-around;
-    gap: 0;
-    padding: var(--space-2) var(--space-2);
+    justify-content: space-between;
+    padding: 4px 4px;
   }
   .bnav-link {
-    padding: var(--space-2) var(--space-2);
-    font-size: 0.68rem;
+    padding: 6px 7px;
+    font-size: 0.64rem;
+    flex: 1;
+    text-align: center;
   }
 }
 
