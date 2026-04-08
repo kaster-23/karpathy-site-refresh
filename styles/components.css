@@ -839,11 +839,6 @@ body {
   aspect-ratio: 1 / 1;
 }
 
-@media (max-width: 640px) {
-  #projects-grid .card-img-wrap {
-    aspect-ratio: 16 / 9;
-  }
-}
 
 /* ===========================
    LIST VIEW MODE
