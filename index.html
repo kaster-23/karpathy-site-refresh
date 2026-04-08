@@ -161,8 +161,18 @@
     <!-- TALKS -->
     <section class="section" id="talks">
       <div class="container container--wide">
-        <h2 class="section-heading anim-reveal">Featured Talks</h2>
-        <div class="grid grid--3 talks-grid">
+        <div class="section-header">
+          <h2 class="section-heading anim-reveal">Featured Talks</h2>
+          <div class="view-toggle" role="group" aria-label="View mode">
+            <button class="view-btn" data-view="grid" data-target="talks-grid" aria-pressed="true" title="Grid view">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M1 1h6v6H1V1zm8 0h6v6H9V1zM1 9h6v6H1V9zm8 0h6v6H9V9z"/></svg>
+            </button>
+            <button class="view-btn" data-view="list" data-target="talks-grid" aria-pressed="false" title="List view">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="2.5" width="3.5" height="3" rx="0.5"/><rect x="6" y="3" width="9" height="2" rx="1"/><rect x="1" y="6.75" width="3.5" height="3" rx="0.5"/><rect x="6" y="7.25" width="9" height="2" rx="1"/><rect x="1" y="11" width="3.5" height="3" rx="0.5"/><rect x="6" y="11.5" width="9" height="2" rx="1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div id="talks-grid" class="grid grid--3 talks-grid">
 
           <a href="https://www.youtube.com/watch?v=lXUZvyajciY&t=7028s" class="card anim-card" target="_blank" rel="noopener">
             <div class="card-img-wrap"><img class="card-image" src="assets/images/dwarkesh_pod.jpg" alt="Dwarkesh Podcast 2025" loading="lazy"></div>
@@ -280,39 +290,67 @@
 
     <!-- TEACHING -->
     <section class="section" id="teaching">
-      <div class="container">
+      <div class="container container--wide">
         <h2 class="section-heading anim-reveal">Teaching</h2>
 
-        <p class="anim-reveal" style="margin-bottom: var(--space-8);">I have a <a href="https://www.youtube.com/@AndrejKarpathy" target="_blank" rel="noopener">YouTube channel</a>, where I post lectures on LLMs and AI more generally.</p>
+        <p class="anim-reveal" style="margin-bottom: var(--space-6);">I have a <a href="https://www.youtube.com/@AndrejKarpathy" target="_blank" rel="noopener">YouTube channel</a>, where I post lectures on LLMs and AI more generally.</p>
 
-        <div class="teach-grid anim-reveal">
+        <!-- Zero to Hero playlist — 8 videos -->
+        <div class="grid grid--4 yt-grid" style="margin-bottom: var(--space-8);">
 
-          <a href="https://www.youtube.com/@AndrejKarpathy" class="teach-card" target="_blank" rel="noopener">
-            <img src="assets/images/youtube.jpg" alt="Neural Networks: Zero to Hero" loading="lazy" class="teach-card-img">
-            <div class="teach-card-body">
-              <span class="card-meta">YouTube · 2022 – present</span>
-              <h3 class="teach-card-title">Neural Networks: Zero to Hero</h3>
-              <p>Backprop, transformers, GPT-2 — all built from scratch, no shortcuts. One of the most-watched deep learning series online.</p>
-            </div>
+          <a href="https://youtu.be/zjkBMFhNj_g" class="yt-card anim-card" target="_blank" rel="noopener">
+            <div class="yt-thumb-wrap"><img src="https://i.ytimg.com/vi/zjkBMFhNj_g/hqdefault.jpg" alt="Intro to Large Language Models" loading="lazy" class="yt-thumb"></div>
+            <p class="yt-title">[1hr Talk] Intro to Large Language Models</p>
           </a>
 
-          <a href="https://cs231n.stanford.edu/" class="teach-card" target="_blank" rel="noopener">
-            <img src="assets/images/cs231n_class.jpg" alt="CS231n at Stanford" loading="lazy" class="teach-card-img">
-            <div class="teach-card-body">
-              <span class="card-meta">Stanford · 2015 – 2017</span>
-              <h3 class="teach-card-title">CS 231n: Convolutional Neural Networks for Visual Recognition ❤️</h3>
-              <p>In 2015 I designed and was the primary instructor for the first deep learning class Stanford. The class became one of the largest at Stanford and has grown from 150 enrolled in 2015 to 330 students in 2016, and 750 students in 2017.</p>
-            </div>
+          <a href="https://youtu.be/kCc8FmEb1nY" class="yt-card anim-card" target="_blank" rel="noopener">
+            <div class="yt-thumb-wrap"><img src="https://i.ytimg.com/vi/kCc8FmEb1nY/hqdefault.jpg" alt="Let's build GPT" loading="lazy" class="yt-thumb"></div>
+            <p class="yt-title">Let's build GPT: from scratch, in code, spelled out.</p>
+          </a>
+
+          <a href="https://youtu.be/ASAoinfgkgE" class="yt-card anim-card" target="_blank" rel="noopener">
+            <div class="yt-thumb-wrap"><img src="https://i.ytimg.com/vi/ASAoinfgkgE/hqdefault.jpg" alt="Building makemore Part 5: WaveNet" loading="lazy" class="yt-thumb"></div>
+            <p class="yt-title">Building makemore Part 5: Building a WaveNet</p>
+          </a>
+
+          <a href="https://youtu.be/q8SA3rM6ckI" class="yt-card anim-card" target="_blank" rel="noopener">
+            <div class="yt-thumb-wrap"><img src="https://i.ytimg.com/vi/q8SA3rM6ckI/hqdefault.jpg" alt="Becoming a Backprop Ninja" loading="lazy" class="yt-thumb"></div>
+            <p class="yt-title">Building makemore Part 4: Becoming a Backprop Ninja</p>
+          </a>
+
+          <a href="https://youtu.be/P6sfmUTpUmc" class="yt-card anim-card" target="_blank" rel="noopener">
+            <div class="yt-thumb-wrap"><img src="https://i.ytimg.com/vi/P6sfmUTpUmc/hqdefault.jpg" alt="Activations & Gradients, BatchNorm" loading="lazy" class="yt-thumb"></div>
+            <p class="yt-title">Building makemore Part 3: Activations &amp; Gradients, BatchNorm</p>
+          </a>
+
+          <a href="https://youtu.be/TCH_1BHY58I" class="yt-card anim-card" target="_blank" rel="noopener">
+            <div class="yt-thumb-wrap"><img src="https://i.ytimg.com/vi/TCH_1BHY58I/hqdefault.jpg" alt="Building makemore Part 2: MLP" loading="lazy" class="yt-thumb"></div>
+            <p class="yt-title">Building makemore Part 2: MLP</p>
+          </a>
+
+          <a href="https://youtu.be/sMuozAAAMkQ" class="yt-card anim-card" target="_blank" rel="noopener">
+            <div class="yt-thumb-wrap"><img src="https://i.ytimg.com/vi/sMuozAAAMkQ/hqdefault.jpg" alt="Spelled-out intro to language modeling" loading="lazy" class="yt-thumb"></div>
+            <p class="yt-title">The spelled-out intro to language modeling: building makemore</p>
+          </a>
+
+          <a href="https://youtu.be/VMj-3S1tku0" class="yt-card anim-card" target="_blank" rel="noopener">
+            <div class="yt-thumb-wrap"><img src="https://i.ytimg.com/vi/VMj-3S1tku0/hqdefault.jpg" alt="Spelled-out intro to neural networks and backpropagation" loading="lazy" class="yt-thumb"></div>
+            <p class="yt-title">The spelled-out intro to neural networks and backpropagation:&hellip;</p>
           </a>
 
         </div>
 
-        <div class="teach-links-row anim-reveal">
-          <a href="https://youtube.com/playlist?list=PLkt2uSq6rBVctENoVBg1TpCC7OQi31AlC" class="tag" target="_blank" rel="noopener">2016 lecture videos</a>
+        <!-- CS231n -->
+        <p class="anim-reveal" style="margin-bottom: var(--space-5);">In 2015 I designed and was the primary instructor for the first deep learning class Stanford — <a href="https://cs231n.stanford.edu/" target="_blank" rel="noopener">CS 231n: Convolutional Neural Networks for Visual Recognition</a> ❤️. The class became one of the largest at Stanford and has grown from 150 enrolled in 2015 to 330 students in 2016, and 750 students in 2017.</p>
+
+        <div class="flex flex-wrap gap-3 anim-reveal" style="margin-bottom: var(--space-6);">
+          <a href="https://youtube.com/playlist?list=PLkt2uSq6rBVctENoVBg1TpCC7OQi31AlC" class="tag" target="_blank" rel="noopener">my 2016 lecture videos</a>
           <a href="https://cs231n.github.io/" class="tag" target="_blank" rel="noopener">course notes</a>
           <a href="https://cs231n.stanford.edu/syllabus.html" class="tag" target="_blank" rel="noopener">course syllabus</a>
           <a href="https://www.reddit.com/r/cs231n/" class="tag" target="_blank" rel="noopener">r/cs231n</a>
         </div>
+
+        <img src="assets/images/cs231n_class.jpg" alt="CS231n Stanford class" loading="lazy" class="cs231n-photo anim-reveal">
       </div>
     </section>
 
@@ -371,10 +409,20 @@
     <!-- PROJECTS -->
     <section class="section" id="projects">
       <div class="container container--wide">
-        <h2 class="section-heading anim-reveal">Pet Projects</h2>
-        <p class="pub-note anim-reveal"><em>This list is a bit outdated, see my up to date projects on my <a href="https://github.com/karpathy" target="_blank" rel="noopener">GitHub</a>.</em></p>
+        <div class="section-header">
+          <h2 class="section-heading anim-reveal">Pet Projects</h2>
+          <div class="view-toggle" role="group" aria-label="View mode">
+            <button class="view-btn" data-view="grid" data-target="projects-grid" aria-pressed="true" title="Grid view">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M1 1h6v6H1V1zm8 0h6v6H9V1zM1 9h6v6H1V9zm8 0h6v6H9V9z"/></svg>
+            </button>
+            <button class="view-btn" data-view="list" data-target="projects-grid" aria-pressed="false" title="List view">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="2.5" width="3.5" height="3" rx="0.5"/><rect x="6" y="3" width="9" height="2" rx="1"/><rect x="1" y="6.75" width="3.5" height="3" rx="0.5"/><rect x="6" y="7.25" width="9" height="2" rx="1"/><rect x="1" y="11" width="3.5" height="3" rx="0.5"/><rect x="6" y="11.5" width="9" height="2" rx="1"/></svg>
+            </button>
+          </div>
+        </div>
+        <p class="pub-note anim-reveal" style="margin-top: calc(-1 * var(--space-2)); margin-bottom: var(--space-6);"><em>This list is a bit outdated, see my up to date projects on my <a href="https://github.com/karpathy" target="_blank" rel="noopener">GitHub</a>.</em></p>
 
-        <div class="grid grid--2">
+        <div id="projects-grid" class="grid grid--2">
 
           <a href="https://github.com/karpathy/micrograd" class="card anim-card" target="_blank" rel="noopener">
             <div class="card-img-wrap"><img class="card-image" src="assets/images/puppy.jpg" alt="micrograd" loading="lazy"></div>
@@ -385,8 +433,8 @@
             </div>
           </a>
 
-          <a href="https://github.com/karpathy/nanoGPT" class="card card--placeholder anim-card" target="_blank" rel="noopener">
-            <div class="card-placeholder-inner"><span class="card-placeholder-name">nanoGPT</span></div>
+          <a href="https://github.com/karpathy/nanoGPT" class="card anim-card" target="_blank" rel="noopener">
+            <div class="card-img-wrap"><img class="card-image" src="https://i.ytimg.com/vi/kCc8FmEb1nY/hqdefault.jpg" alt="nanoGPT" loading="lazy"></div>
             <div class="card-body">
               <span class="card-meta">Python · 2022</span>
               <h3 class="card-title">nanoGPT</h3>

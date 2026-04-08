@@ -61,8 +61,8 @@
   --space-24: 6rem;
 
   /* Fluid section gap */
-  --section-gap: clamp(3.5rem, 2.5rem + 5vw, 7rem);
-  --section-gap-sm: clamp(2rem, 1.5rem + 2.5vw, 4rem);
+  --section-gap: clamp(2rem, 1.5rem + 2.5vw, 4rem);
+  --section-gap-sm: clamp(1.25rem, 1rem + 1.5vw, 2.5rem);
 
   /* === Layout === */
   --container-max:   44rem;

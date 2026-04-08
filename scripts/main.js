@@ -62,6 +62,53 @@
     });
   }
 
+  // ─── Grid / List view toggle ─────────────────────────────────────────────
+  function initViewToggles() {
+    const toggleGroups = document.querySelectorAll('.view-toggle');
+
+    toggleGroups.forEach((group) => {
+      const btns = group.querySelectorAll('.view-btn');
+
+      // Restore persisted state
+      const firstBtn = btns[0];
+      if (firstBtn) {
+        const targetId = firstBtn.dataset.target;
+        let savedView = 'grid';
+        try { savedView = localStorage.getItem('view-' + targetId) || 'grid'; } catch (e) {}
+
+        if (savedView === 'list') {
+          const grid = document.getElementById(targetId);
+          if (grid) {
+            grid.classList.add('is-list');
+            btns.forEach((b) => b.setAttribute('aria-pressed', b.dataset.view === 'list' ? 'true' : 'false'));
+          }
+        }
+      }
+
+      btns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.dataset.target;
+          const view     = btn.dataset.view;
+          const grid     = document.getElementById(targetId);
+          if (!grid) return;
+
+          btns.forEach((b) => b.setAttribute('aria-pressed', 'false'));
+          btn.setAttribute('aria-pressed', 'true');
+
+          if (view === 'list') {
+            grid.classList.add('is-list');
+          } else {
+            grid.classList.remove('is-list');
+          }
+
+          try { localStorage.setItem('view-' + targetId, view); } catch (e) {}
+        });
+      });
+    });
+  }
+
+  initViewToggles();
+
   // ─── Skip all animations if reduced motion ───────────────────────────────
   if (prefersReducedMotion) return;
 
@@ -119,7 +166,6 @@
             duration: 0.75,
             ease: 'power2.out',
             onComplete: () => {
-              // Class-based CSS transition for the underline
               el.classList.add('heading-revealed');
             },
           });
@@ -131,7 +177,6 @@
   // ─── Generic .anim-reveal elements ───────────────────────────────────────
   function genericReveals() {
     document.querySelectorAll('.anim-reveal').forEach((el) => {
-      // Skip section headings (handled separately)
       if (el.classList.contains('section-heading')) return;
 
       gsap.to(el, {
@@ -150,8 +195,8 @@
 
   // ─── Card grids: staggered entrance ──────────────────────────────────────
   function cardGrids() {
-    document.querySelectorAll('.grid').forEach((grid) => {
-      const cards = grid.querySelectorAll('.anim-card');
+    document.querySelectorAll('.grid, .yt-grid').forEach((grid) => {
+      const cards = grid.querySelectorAll('.anim-card, .yt-card');
       if (!cards.length) return;
 
       gsap.to(cards, {
@@ -160,7 +205,7 @@
         duration: 0.6,
         ease: 'power2.out',
         stagger: {
-          amount: 0.4,   // Total stagger duration across all cards
+          amount: 0.4,
           from: 'start',
         },
         scrollTrigger: {
