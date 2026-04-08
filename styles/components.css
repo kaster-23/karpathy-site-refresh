@@ -156,16 +156,29 @@
 .timeline-logo {
   height: 22px;
   width: auto;
-  max-width: 80px;
+  max-width: 90px;
   object-fit: contain;
   filter: grayscale(1) brightness(0.35) contrast(1.1);
-  opacity: 0.75;
+  opacity: 0.65;
   transition:
     filter var(--duration-slow) var(--ease-default),
     opacity var(--duration-slow) var(--ease-default);
 }
 
-.timeline-logo:hover {
+/* SVG logos: use color inheritance, no filter needed */
+.timeline-logo--svg {
+  filter: none;
+  opacity: 0.45;
+  color: var(--color-fg);
+  /* Make SVG text-based logos match the line height */
+  height: 20px;
+}
+
+.timeline-logo--svg:hover {
+  opacity: 0.85;
+}
+
+.timeline-logo:not(.timeline-logo--svg):hover {
   filter: grayscale(0) brightness(1) contrast(1);
   opacity: 1;
 }
@@ -498,10 +511,10 @@
 }
 
 .pub-venue {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--text-xs);
   color: var(--color-fg-subtle);
-  letter-spacing: 0.03em;
+  line-height: var(--leading-normal);
 }
 
 
