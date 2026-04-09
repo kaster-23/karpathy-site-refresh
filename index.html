@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="styles/utilities.css">
 </head>
 <body>
+  <div id="grain"></div>
 
   <!-- HERO -->
   <header class="hero">
@@ -672,6 +673,20 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="scripts/main.js"></script>
+
+  <!-- Grain -->
+  <script src="https://cdn.jsdelivr.net/npm/grained@0.0.2/grained.min.js"></script>
+  <script>
+    grained('#grain', {
+      animate: true,
+      patternWidth: 100,
+      patternHeight: 100,
+      grainOpacity: 0.05,
+      grainDensity: 1,
+      grainWidth: 1,
+      grainHeight: 1
+    });
+  </script>
 
 </body>
 </html>
