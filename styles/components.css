@@ -269,35 +269,25 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* warm duotone: grayscale → amber-sepia tone */
   filter: grayscale(1) sepia(0.55) saturate(1.2) brightness(0.84);
-  transition:
-    transform var(--duration-slow) var(--ease-default),
-    filter 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: filter 0.65s cubic-bezier(0.4, 0, 0.2, 1);
   display: block;
 }
 
-/* halftone dot overlay — warm amber dots */
+/* halftone dot overlay */
 .card-img-wrap::after {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(
-    circle,
-    rgba(120, 60, 10, 0.28) 1px,
-    transparent 1px
-  );
+  background-image: radial-gradient(circle, rgba(120, 60, 10, 0.28) 1px, transparent 1px);
   background-size: 5px 5px;
   pointer-events: none;
-  /* delay fade so color starts returning before dots dissolve */
   transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
   mix-blend-mode: multiply;
   z-index: 1;
 }
 
-/* hover: color floods back, dots fade last */
 .card:hover .card-image {
-  transform: scale(1.04);
   filter: grayscale(0) sepia(0) saturate(1) brightness(1);
 }
 
@@ -616,11 +606,6 @@
   aspect-ratio: 16 / 7;
   object-fit: cover;
   display: block;
-  transition: transform var(--duration-slow) var(--ease-default);
-}
-
-.teach-card:hover .teach-card-img {
-  transform: scale(1.04);
 }
 
 .teach-card-body {
@@ -780,9 +765,7 @@ body {
   height: 100%;
   object-fit: cover;
   filter: grayscale(1) sepia(0.55) saturate(1.2) brightness(0.84);
-  transition:
-    transform var(--duration-slow) var(--ease-default),
-    filter 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: filter 0.65s cubic-bezier(0.4, 0, 0.2, 1);
   display: block;
 }
 
@@ -804,7 +787,6 @@ body {
 }
 
 .yt-card:hover .yt-thumb {
-  transform: scale(1.04);
   filter: grayscale(0) sepia(0) saturate(1) brightness(1);
 }
 
