@@ -15,10 +15,9 @@
   will-change: opacity, transform;
 }
 
-/* Card reveal: fade only — no translate to avoid border-radius jank */
+/* Card reveal: fade only */
 .anim-card {
   opacity: 0;
-  will-change: opacity;
 }
 
 /* Hero-specific initial states */

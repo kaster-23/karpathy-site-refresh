@@ -246,8 +246,10 @@
   border-radius: var(--radius-lg);
   overflow: hidden;
   text-decoration: none;
-  /* Prevent link hover color from cascading into card text */
   color: var(--color-fg);
+  /* Force card onto its own compositor layer so overflow:hidden+border-radius
+     clips correctly even when children are promoted during GSAP animation */
+  transform: translateZ(0);
   transition:
     box-shadow var(--duration-normal) var(--ease-default),
     border-color var(--duration-normal) var(--ease-default);
@@ -263,6 +265,9 @@
   aspect-ratio: 16 / 9;
   background: var(--color-border-light);
   position: relative;
+  /* Self-clip the top corners to match card — belt-and-suspenders
+     against compositor layer clipping failures */
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
 .card-image {
